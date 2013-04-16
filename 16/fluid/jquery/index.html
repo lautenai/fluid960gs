@@ -10,10 +10,14 @@
 		<link rel="stylesheet" type="text/css" href="../../../css/nav.css" media="screen" />
 		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../../../css/ie6.css" media="screen" /><![endif]-->
 		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../../../css/ie.css" media="screen" /><![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="../../../lib/css3-facebook-buttons-master/fb-buttons.css" media="screen" />
 		
 		<!-- Add jQuery library -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" media="screen" />
+		<script src="../../../lib/jquery/ui/minified/i18n/jquery.ui.datepicker-pt-BR.min.js"></script>
 
 		<!-- Add fancyBox -->
 		<link rel="stylesheet" href="../../../lib/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
@@ -28,6 +32,13 @@
 			});
 		</script>
 		
+		<!-- Load Jquery DatePicker -->
+		<script>
+			$.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
+			$(function() {
+				$( "#datepicker" ).datepicker();
+			});
+		</script>
 	</head>
 	<body>
 		<div class="container_16">
@@ -859,7 +870,7 @@
 									<label>Re-type Password: </label>
 									<input type="password" name="password2" />
 								</p>
-								<input class="confirm button" type="submit" value="Confirm Availability" />
+								<input class="confirm button uibutton" type="submit" value="Confirm Availability" />
 							</fieldset>
 							<fieldset>
 								<legend>Personal Information</legend>
@@ -973,7 +984,11 @@
 									<label>Email Address: </label>
 									<input type="text" name="email" value="" />
 								</p>
-								<input type="submit" value="Register" class="register-button" />
+								<p>
+									<label>Date Picker: </label>
+									<input type="text" name="date" id="datepicker" value="" />
+								</p>
+								<input type="submit" value="Register" class="register-button uibutton" />
 							</fieldset>
 						</form>
 					</div>
@@ -988,7 +1003,7 @@
 						<form method="get" action="" class="search">
 							<p>
 								<input class="search text" name="value" type="text" />
-								<input class="search button" value="Search" type="submit" />
+								<input class="search button uibutton" value="Search" type="submit" />
 							</p>
 						</form>
 					</div>
@@ -1010,14 +1025,14 @@
 									<label>Password: </label>
 									<input type="password" name="password" />
 								</p>
-								<input class="login button" type="submit" value="Login" />
+								<input class="login button uibutton" type="submit" value="Login" />
 							</fieldset>
 						</form>
 						<form action="">
 							<fieldset>
 								<legend>Register</legend>
 								<p>If you do not already have an account, please create a new account to register.</p>
-								<input type="submit" value="Create Account" />
+								<input class="uibutton" type="submit" value="Create Account" />
 							</fieldset>
 						</form>
 					</div>
